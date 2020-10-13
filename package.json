@@ -1,0 +1,16 @@
+{
+  "name": "sticky-query-params",
+  "version": "1.0.0",
+  "description": "A tiny javascript module that saves marketing query params across page loads to better track conversions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "git@github.com:vikeen/sticky-query-params.git",
+  "author": "John Rake <john.rake12@gmail.com>",
+  "license": "GNU General Public License v3.0",
+  "devDependencies": {
+    "jest": "^26.5.3",
+    "query-string": "^6.13.5"
+  }
+}
