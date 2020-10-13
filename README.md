@@ -1,7 +1,27 @@
 # Sticky Query Params
 A tiny javascript module that saves marketing query params across page loads to better track conversions
 
-# Development
+## Usage
+
+## Usage
+
+```html
+<script src = "https://cdn.jsdelivr.net/npm/@gorillabot-labs/sticky-query-params@latest/dist/index.js"></script>
+<script>
+  var sqpConfig = {};
+  sqpConfig.conversionDomain = "app.awesomeproduct.com";
+
+  try {
+    sqp.stickParams(sqpConfig);
+  } catch (e) {
+    console.log(e);
+  }
+</script>
+```
+
+> Note: Some build tools make explicit use of Node features which have been introduced in version *8.9.0*. Please make sure you're using the correct Node version (>8.9.0) before you proceed to create your own build using the commands listed below.
+
+## Development
 
 Keep this module light-weight. Consumers will be uploading this onto their marketing websites and we don't want to slow them down.
 
@@ -11,11 +31,11 @@ Keep this module light-weight. Consumers will be uploading this onto their marke
 1. Keep it fast
 1. Keep it tested 
 
-# Testing
+## Testing
 
 1. Run test suite: `yarn test`
 
-# Deployment
+## Deployment
 
 1. Run test suite: `yarn test`
 1. Create build: `yarn build`

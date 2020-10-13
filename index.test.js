@@ -1,6 +1,6 @@
 const queryString = require('query-string');
 
-const stickyQueryParams = require('./index');
+const sqp = require('./index');
 
 beforeEach(() => {
     window.localStorage.clear()
@@ -10,11 +10,16 @@ beforeEach(() => {
 const visitPage = (title, path) => {
     window.history.pushState({}, title, path);
 
+
     // we recommend all consumers execute the javascript on each page load for best conversion tracking
-    stickyQueryParams({conversionDomain: "app.awesomeproduct.com"})
+    sqp.stickParams()
+
+    // make sure we trigger the wind load and simulate what a real browser would do
+    window.dispatchEvent(new Event('load'))
 }
 
 test('should persist all utm marketing codes to local storage', () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     const search = queryString.stringify({
         utm_source: "facebook",
         utm_campaign: "20percentoff",
@@ -36,6 +41,7 @@ test('should persist all utm marketing codes to local storage', () => {
 });
 
 test('should persist some utm marketing codes to local storage', () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     const search = queryString.stringify({
         utm_source: "facebook",
         utm_campaign: "20percentoff",
@@ -52,6 +58,7 @@ test('should persist some utm marketing codes to local storage', () => {
 });
 
 test('should update domain specific links with utm codes to track conversions', () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     document.body.innerHTML = `
         <div id="pricing-plans">
             <a id="free-tier" href="https://app.awesomeproduct.com/free">Startups (Free)</a>
@@ -75,6 +82,7 @@ test('should update domain specific links with utm codes to track conversions', 
 });
 
 test('should update domain specific links and keep any query params', () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     document.body.innerHTML = `
         <div id="pricing-plans">
             <a id="free-tier" href="https://app.awesomeproduct.com/free?planId=free">Startups (Free)</a>
@@ -98,6 +106,7 @@ test('should update domain specific links and keep any query params', () => {
 });
 
 test('should ignore links that do not match the conversion domain', () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     document.body.innerHTML = `
         <div id="pricing-plans">
             <a id="free-tier" href="https://app.awesomeproduct.com/free">Startups (Free)</a>
@@ -123,6 +132,7 @@ test('should ignore links that do not match the conversion domain', () => {
 });
 
 test("should add utm codes to links even if the user explores multiple pages", () => {
+    window.sqpConfig = {conversionDomain: "app.awesomeproduct.com"};
     const search = queryString.stringify({
         utm_source: "facebook",
         utm_campaign: "20percentoff",
