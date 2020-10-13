@@ -6,5 +6,13 @@ module.exports = {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    mode: 'production'
+    mode: 'production',
+    devServer: {
+        contentBase: [
+            path.join(__dirname, 'dist'),
+            path.join(__dirname, 'examples')
+        ],
+        compress: true,
+        port: 9000
+    }
 };

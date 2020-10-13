@@ -33,6 +33,10 @@ Keep this module light-weight. Consumers will be uploading this onto their marke
 1. Keep it fast
 1. Keep it tested 
 
+## Examples
+
+1. Check examples directory or run `yarn examples`
+
 ## Testing
 
 1. Run test suite: `yarn test`
