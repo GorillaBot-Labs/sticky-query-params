@@ -11,13 +11,13 @@ A tiny javascript module that saves marketing query params across page loads to 
   var sqpConfig = {};
   sqpConfig.conversionDomain = "app.awesomeproduct.com";
 
-    window.addEventListener('load', (event) => {
-        try {
-            sqp.stickParams(sqpConfig);
-        } catch (e) {
-            console.log(e);
-        }
-    });
+  window.addEventListener('load', (event) => {
+    try {
+      sqp.stickParams(sqpConfig);
+    } catch (e) {
+      console.log(e);
+    }
+  });
 </script>
 ```
 
