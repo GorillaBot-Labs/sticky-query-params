@@ -1,16 +1,26 @@
 {
-  "name": "sticky-query-params",
+  "name": "@gorillabot-labs/sticky-query-params",
   "version": "1.0.0",
   "description": "A tiny javascript module that saves marketing query params across page loads to better track conversions",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
-  "repository": "git@github.com:vikeen/sticky-query-params.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vikeen/sticky-query-params.git"
+  },
   "author": "John Rake <john.rake12@gmail.com>",
-  "license": "GNU General Public License v3.0",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "jest": "^26.5.3",
-    "query-string": "^6.13.5"
-  }
+    "query-string": "^6.13.5",
+    "webpack": "^5.1.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/vikeen/sticky-query-params/issues"
+  },
+  "homepage": "https://github.com/vikeen/sticky-query-params#readme"
 }
