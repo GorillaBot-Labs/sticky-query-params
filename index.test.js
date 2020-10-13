@@ -1,21 +1,17 @@
 const queryString = require('query-string');
 
-const sqp = require('./index');
 
 beforeEach(() => {
     window.localStorage.clear()
     window.sessionStorage.clear()
+    require('./index');
 })
 
 const visitPage = (title, path) => {
     window.history.pushState({}, title, path);
 
-
     // we recommend all consumers execute the javascript on each page load for best conversion tracking
-    sqp.stickParams()
-
-    // make sure we trigger the wind load and simulate what a real browser would do
-    window.dispatchEvent(new Event('load'))
+    window.sqp.stickParams()
 }
 
 test('should persist all utm marketing codes to local storage', () => {

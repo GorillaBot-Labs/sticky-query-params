@@ -6,16 +6,18 @@ A tiny javascript module that saves marketing query params across page loads to 
 ## Usage
 
 ```html
-<script src = "https://cdn.jsdelivr.net/npm/@gorillabot-labs/sticky-query-params@latest/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@gorillabot-labs/sticky-query-params@latest/dist/index.js"></script>
 <script>
   var sqpConfig = {};
   sqpConfig.conversionDomain = "app.awesomeproduct.com";
 
-  try {
-    sqp.stickParams(sqpConfig);
-  } catch (e) {
-    console.log(e);
-  }
+    window.addEventListener('load', (event) => {
+        try {
+            sqp.stickParams(sqpConfig);
+        } catch (e) {
+            console.log(e);
+        }
+    });
 </script>
 ```
 

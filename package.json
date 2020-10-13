@@ -1,6 +1,6 @@
 {
   "name": "@gorillabot-labs/sticky-query-params",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tiny javascript module that saves marketing query params across page loads to better track conversions",
   "main": "index.js",
   "scripts": {
