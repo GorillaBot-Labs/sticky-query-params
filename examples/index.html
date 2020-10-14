@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Examples</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="/index.js"></script>
+    <script>
+        var sqpConfig = {};
+        sqpConfig.conversionDomain = "app.awesomeproduct.com";
+
+        window.addEventListener('load', (event) => {
+            try {
+                sqp.stickParams(sqpConfig);
+            } catch (e) {
+                console.log(e);
+            }
+        });
+    </script>
 </head>
-<body>
-Hi
+<body class="pt-5">
+<div class="container">
+    <h1>Examples</h1>
+    <p>
+        You'll need to load this page utm query parameters for these examples to work.
+        Or <a href="/?utm_source=facebook&utm_campaign=20percentoff&utm_medium=socialmedia&utm_term=super awesome product&utm_content=ad_version_bold_text">click
+        here</a>
+    </p>
+    <h3>Links</h3>
+    <ul>
+        <li><a href="https://app.awesomeproduct.com" target="_blank">Link with valid domain</a></li>
+        <li><a href="https://www.awesomeproduct.com" target="_blank">Link with invalid domain</a></li>
+    </ul>
+</div>
 </body>
 </html>
