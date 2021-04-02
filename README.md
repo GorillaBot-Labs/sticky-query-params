@@ -3,8 +3,6 @@ A tiny javascript module that saves marketing query params across page loads to 
 
 ## Usage
 
-## Usage
-
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@gorillabot-labs/sticky-query-params@latest/dist/index.js"></script>
 <script>
